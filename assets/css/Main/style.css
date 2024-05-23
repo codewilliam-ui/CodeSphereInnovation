@@ -1,0 +1,13 @@
+
+body{
+    background-color: rgb(1, 2, 16); 
+}
+.loading{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cog{
+    filter: drop-shadow(1px 1px 4px rgb(255, 0, 170));
+}

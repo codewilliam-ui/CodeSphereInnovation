@@ -1,18 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/Main/style.css">
-    <title>Document</title>
+    
+    <title>Code Sphere Innovation</title>
 </head>
 <body>
-    <div class="loading">
-        <img src="assets/img/no bordas-1_animated.svg" id="cog" alt="" type="image/svg+xml">
+    <header class="cabeçalho" id="header">
+        <nav class="nav">
+            <a href="/" class="logo"><img src="assets/img/logo csi.svg" alt="Logotipo" id="cog"></a>
+            <button class="hamburger"></button>
+            <ul class="nav-list">
+                <li><a href="./">Home</a></li>
+                <li><a href="inicio/quem-somos.html">Quem Somos</a></li>
+                <li><a href="inicio/contatos.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="introducao">
+        <!--Content before waves-->
+        <div class="flex-intro">            
+            <div class="inner-header flex">
+                <h1>Serviços e Soluções de TI</h1>
+                <span>Qualidade Grantida</span>
+                <!-- <p>A Code Sphere Innovation é uma empresa de TI que visa fornecer o mais eficaz serviço de comunicação aos seus clientes.</p> -->
+            </div>
+        </div>
+        
+        <!--Waves Container-->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->        
     </div>
+    <!--Header ends-->
+    
 
     
     <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
-    <script src="assets/js/index.js"></script>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+const nav = document.querySelector(".nav");
+
+hamburger.addEventListener("click", () => nav.classList.toggle("active"));
+    </script>
 </body>
 </html>

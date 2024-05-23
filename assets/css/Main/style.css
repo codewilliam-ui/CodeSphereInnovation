@@ -1,6 +1,6 @@
 
 body{
-    background-color: rgb(1, 2, 16); 
+    background-color: rgb(1, 1, 31); 
 }
 .loading{
     height: 100vh;
@@ -9,5 +9,5 @@ body{
     align-items: center;
 }
 #cog{
-    filter: drop-shadow(0px 0px 7px rgb(255, 0, 170));
+    filter: blur(50%);
 }

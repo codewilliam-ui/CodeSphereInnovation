@@ -301,10 +301,12 @@ body {
 
 /* ======================= SEÇÃO RESPONSIVIDADE ======================== */
 section.responsividade{
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
 }
 section.responsividade .dispositivos{
+  width: 60vw;
+  height: 400px;
  display: grid; 
  grid-template-columns: 1fr 1fr;
  grid-gap: 40px 30px;
@@ -328,9 +330,23 @@ section.responsividade .dispositivos .resp img{
   margin-bottom: 10px;
   border-radius: 15px;
 }
+section.responsividade .dispositivos-img img{
+  width: auto;
+  height: 400px;
+}
 @media only screen and (max-width: 768px) {
   section.responsividade .dispositivos {
     grid-template-columns: 1fr; /* Altera para uma coluna */
+    width: auto;
+    height: auto;
+  }
+  section.responsividade{
+    flex-direction: column;
+  }
+  section.responsividade .dispositivos-img img{
+    width: 100vw;
+    height: auto;
+
   }
 }
 /* ===================== FIM SEÇÃO RESPONSIVIDADE ====================== */

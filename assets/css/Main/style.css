@@ -9,7 +9,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html{
+  height: 500vh;
+}
 :root{
     /* Fontes */
     --Lato: 'Lato', sans-serif;
@@ -17,7 +19,7 @@
     --Montserrat: 'Montserrat', sans-serif;
 
     /* Variáveis da cor azul */
-    --azure: #E8F1F3;
+    --azure: #EFF1F9;
     --carolina_blue: #1C9CD7;
     --celadon_blue: #247BA0;
     --sapphire_blue: #014990;
@@ -174,6 +176,10 @@ body {
       transform: rotate(-135deg);
       top: -7px;
   }
+
+
+
+  
 }
 /* ================ FIM MEDIA QUERY (MAX-WIDTH: 750px) ================= */
 
@@ -183,7 +189,7 @@ body {
   width: 100%;
   position:relative;
   text-align:center;
-  background: linear-gradient(45deg,#eaff00,red,#D900FF,#0059FF,#00FF37);
+  background: linear-gradient(45deg,#B517EC,#6F2BD5,#B517EC,#6F2BD5);
   background-size: 300% 300%;
   animation: color 12s ease-in-out infinite;
   color:white;
@@ -205,14 +211,18 @@ body {
   height: 80vh;
   margin-left: 5vw;
   align-items: center ;
+  justify-content: center;
 }
 .inner-header.flex { /*Flexbox for containers*/
+  position: relative; /* Redundante */
   display: flex;
-  justify-content: left;
+  top: 50px;
+  justify-content: center;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
+  gap: 40px 0;
 }
-h1 {
+.introducao .flex-intro .inner-header.flex h1 {
   font: 700 48px var(--Montserrat);
   line-height: 1.75em;
 }
@@ -220,11 +230,14 @@ h1 {
   color: var(--azure);
   font: 600 20px var(--Montserrat);
 }
-p {
+.introducao .flex-intro .inner-header.flex p {
     font: 400 14px var(--Lato);
   letter-spacing: 1px;
   color: white;
   text-shadow: 0 0 3px white;
+}
+.introducao .flex-intro .logo-motion{
+  z-index: 10;
 }
 .waves {
   position:relative;
@@ -281,4 +294,43 @@ p {
   h1 {
     font-size:24px;
   }
+  section.responsividade .dispositivos{
+    grid-template-columns: 1fr;
+  }
 }
+
+/* ======================= SEÇÃO RESPONSIVIDADE ======================== */
+section.responsividade{
+  display: flex;
+  flex-wrap: wrap;
+}
+section.responsividade .dispositivos{
+ display: grid; 
+ grid-template-columns: 1fr 1fr;
+ grid-gap: 40px 30px;
+ align-self: center;
+ padding: 20px; 
+ background-color: var(--cinza-clarinho);
+}
+section.responsividade .dispositivos .resp{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+  gap: 10px 0;
+}
+section.responsividade .dispositivos .resp img{
+  width: 50px;
+  height: 50px;
+  background-color: var(--azure);
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+@media only screen and (max-width: 768px) {
+  section.responsividade .dispositivos {
+    grid-template-columns: 1fr; /* Altera para uma coluna */
+  }
+}
+/* ===================== FIM SEÇÃO RESPONSIVIDADE ====================== */

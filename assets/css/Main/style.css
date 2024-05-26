@@ -3,6 +3,8 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Prompt:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 
 *{
     margin: 0;
@@ -17,6 +19,7 @@ html{
     --Lato: 'Lato', sans-serif;
     --Roboto: 'Roboto', sans-serif;
     --Montserrat: 'Montserrat', sans-serif;
+    --Prompt: 'Prompt', sans-serif;
 
     /* Variáveis da cor azul */
     --azure: #EFF1F9;
@@ -29,6 +32,7 @@ html{
     /* Variável da cor vermelha */
     --medium_red: #A20202;
     --tomate: #FF814D;
+    --rosa-medio: #FF6B6B;
     /* Variáveis da cor verde */
     --verde-azulado: #009a9f;
     --verde: #30EA66;
@@ -47,6 +51,7 @@ html{
 
 body {
   margin:0;
+  overflow-x: hidden;
 }
 
 /* ============================== HEADER =============================== */
@@ -116,71 +121,7 @@ body {
 /* ============================ FIM HEADER ============================= */
 
 /* ================== MEDIA QUERY (MAX-WIDTH: 750px) =================== */
-@media (max-width: 750px) {
-  .nav{
-    padding: 0 20px;
-  }
-  .logo img{
-    margin: 0;
-  }
-  .hamburger {
-      display: block;
-      z-index: 1;
-  }  
-  .nav-list {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: white;
-      clip-path: circle(100px at 90% -15%);
-      transition: 1s ease-out;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      gap: 0;
-      pointer-events: none;
-  }
-  .nav-list a {
-      font-size: 24px;
-      opacity: 0;
-  }
-  .nav-list li:nth-child(1) a {
-      transition: 0.5s 0.2s;
-  }
-  .nav-list li:nth-child(2) a {
-      transition: 0.5s 0.4s;
-  }  
-  .nav-list li:nth-child(3) a {
-      transition: 0.5s 0.6s;
-  }  
-  /* Estilos ativos */  
-  .nav.active .nav-list {
-      clip-path: circle(1500px at 90% -15%);
-      pointer-events: all;
-  }  
-  .nav.active .nav-list a {
-      opacity: 1;
-  }  
-  .nav.active .hamburger {
-      position: fixed;
-      top: 26px;
-      right: 30px;
-      border-top-color: transparent;
-  }  
-  .nav.active .hamburger::before {
-      transform: rotate(135deg);
-  }  
-  .nav.active .hamburger::after {
-      transform: rotate(-135deg);
-      top: -7px;
-  }
 
-
-
-  
-}
 /* ================ FIM MEDIA QUERY (MAX-WIDTH: 750px) ================= */
 
 
@@ -282,8 +223,255 @@ body {
     transform: translate3d(85px,0,0);
   }
 }
-/*Shrinking for mobile*/
-@media (max-width: 768px) {
+
+/* ======================= SEÇÃO RESPONSIVIDADE ======================== */
+section.responsividade{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;  
+  flex-direction: row-reverse;
+  justify-content:center ;
+  align-items: center;
+}
+section.responsividade .dispositivos{
+  width: auto;
+  height: auto;
+ display: grid; 
+ grid-template-columns: 1fr 1fr;
+ grid-gap: 50px;
+ padding: 60px; 
+ background-color: var(--cinza-clarinho);
+}
+section.responsividade .dispositivos .resp{
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  gap: 10px 0;
+}
+section.responsividade .dispositivos .resp img{
+  width: 50px;
+  height: 50px;
+  background-color: var(--azure);
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+section.responsividade .dispositivos .resp span{
+  font: 600 20px var(--Montserrat);
+}
+section.responsividade .dispositivos .resp p{
+  font: 400 14px var(--Montserrat);
+}
+section.responsividade .dispositivos-img img{
+  width: 50vw;
+  height: auto;
+  margin: auto;
+}
+
+/* ===================== FIM SEÇÃO RESPONSIVIDADE ====================== */
+
+
+/* ========================== SEÇÃO LETREIRO =========================== */
+section.animacao-letreiro{
+  width: 100%;  
+}
+section.animacao-letreiro .letreiro{
+  
+  background-color: var(--rosa-medio);
+  width: 100%;
+  padding: 10px 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+section.animacao-letreiro .letreiro{
+  font: 700 65px var(--Prompt);
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  white-space: nowrap;
+  -webkit-text-stroke-color: white;
+}
+section.animacao-letreiro .letreiro.up p{
+  animation: 10s infinite slide linear forwards;
+}
+section.animacao-letreiro .letreiro.down p{
+  animation: 10s infinite letreiro linear forwards;
+}
+section.animacao-letreiro .letreiro p span{
+  color: white;
+  -webkit-text-stroke: none;
+}
+@keyframes slide {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(-1040px);
+  }
+}
+@keyframes letreiro {
+  0% {
+    transform: translateX(-1040PX);
+  }
+  100% {
+    transform: translateX(0); /* Mudança para positivo para inverter a direção */
+  }
+}
+/* ======================== FIM SEÇÃO LETREIRO ========================= */
+
+/* ========================== SEÇÃO POTENCIAL ========================== */
+section.potencial{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+section.potencial .texto-potencial{
+  width: 45vw; display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+section.potencial .texto-potencial h1{
+  font: 500 40px var(--Roboto);
+  color: var(--cinza-dark);
+}
+section.potencial .texto-potencial p{
+  font: 400 17px var(--Roboto);
+  color: var(--cinza-medio);
+  line-height: 1.5em;
+}
+section.potencial .texto-potencial button{
+  font: 500 17px var(--Roboto); color: white;
+  background: linear-gradient(45deg,#B517EC,#6F2BD5);
+  padding: 17px 20px; 
+  border:0;
+  border-radius: 40px;
+}
+section.potencial .texto-potencial .beneficios{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+section.potencial .texto-potencial .beneficios li{
+  font: 400 16px var(--Roboto); color: var(--cinza);
+}
+section.potencial .texto-potencial .beneficios li i{
+  background-color: var(--azul-claro2);
+  color: white;
+  padding: 4px 4px 3px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+section.potencial .img-potencial{
+  display: flex;
+  gap: 70px;
+}
+section.potencial .img-potencial img{
+  height: 550px ;
+  border-radius: 10px;
+}
+section.potencial .img-potencial img.first{
+  position: relative;
+  top: -20px;
+  box-shadow: 30px 30px 20px rgb(0 0 0 / 14%);
+}
+section.potencial .img-potencial img.second{
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.336);
+}
+/* ======================== FIM SEÇÃO POTENCIAL ======================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media  (max-width: 768px) {
+  .nav{
+    padding: 0 20px;
+  }
+  .logo img{
+    margin: 0;
+  }
+  .hamburger {
+      display: block;
+      z-index: 1;
+  }  
+  .nav-list {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      clip-path: circle(100px at 90% -15%);
+      transition: 1s ease-out;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      gap: 0;
+      pointer-events: none;
+  }
+  .nav-list a {
+      font-size: 24px;
+      opacity: 0;
+  }
+  .nav-list li:nth-child(1) a {
+      transition: 0.5s 0.2s;
+  }
+  .nav-list li:nth-child(2) a {
+      transition: 0.5s 0.4s;
+  }  
+  .nav-list li:nth-child(3) a {
+      transition: 0.5s 0.6s;
+  }  
+  /* Estilos ativos */  
+  .nav.active .nav-list {
+      clip-path: circle(1500px at 90% -15%);
+      pointer-events: all;
+  }  
+  .nav.active .nav-list a {
+      opacity: 1;
+  }  
+  .nav.active .hamburger {
+      position: fixed;
+      top: 26px;
+      right: 30px;
+      border-top-color: transparent;
+  }  
+  .nav.active .hamburger::before {
+      transform: rotate(135deg);
+  }  
+  .nav.active .hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
+  }
   .waves {
     height:40px;
     min-height:40px;
@@ -297,44 +485,6 @@ body {
   section.responsividade .dispositivos{
     grid-template-columns: 1fr;
   }
-}
-
-/* ======================= SEÇÃO RESPONSIVIDADE ======================== */
-section.responsividade{
-  position: relative;
-  display: flex;
-}
-section.responsividade .dispositivos{
-  width: 60vw;
-  height: 400px;
- display: grid; 
- grid-template-columns: 1fr 1fr;
- grid-gap: 40px 30px;
- align-self: center;
- padding: 20px; 
- background-color: var(--cinza-clarinho);
-}
-section.responsividade .dispositivos .resp{
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  text-align: center;
-  gap: 10px 0;
-}
-section.responsividade .dispositivos .resp img{
-  width: 50px;
-  height: 50px;
-  background-color: var(--azure);
-  padding: 10px 5px;
-  margin-bottom: 10px;
-  border-radius: 15px;
-}
-section.responsividade .dispositivos-img img{
-  width: auto;
-  height: 400px;
-}
-@media only screen and (max-width: 768px) {
   section.responsividade .dispositivos {
     grid-template-columns: 1fr; /* Altera para uma coluna */
     width: auto;
@@ -345,8 +495,10 @@ section.responsividade .dispositivos-img img{
   }
   section.responsividade .dispositivos-img img{
     width: 100vw;
-    height: auto;
 
   }
+  section.animacao-letreiro .letreiro p{
+    font: 500 45px var(--Prompt);
+    
+  }
 }
-/* ===================== FIM SEÇÃO RESPONSIVIDADE ====================== */

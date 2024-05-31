@@ -6,16 +6,28 @@
 @import url(https://fonts.googleapis.com/css?family=Prompt:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
 
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
-  height: 500vh;
+
+@font-face {
+  font-family: 'DoctorGlitch';
+  src: url(../../fonts/Doctor\ Glitch.otf);
 }
+@font-face {
+  font-family: 'Nos';
+  src: url(../../fonts/NOS.otf);
+}
+
 :root{
     /* Fontes */
+    --DoctorGlitch: 'DoctorGlitch', sans-serif;
+    --Nos: 'Nos', sans-serif;
+    --CodeVein: 'CodeVein',sans-serif;
+    --Zero-Master: 'Zero-Master';
     --Lato: 'Lato', sans-serif;
     --Roboto: 'Roboto', sans-serif;
     --Montserrat: 'Montserrat', sans-serif;
@@ -32,6 +44,8 @@ html{
     /* Variável da cor vermelha */
     --medium_red: #A20202;
     --tomate: #FF814D;
+    --rosa:#B517EC;
+    --roxo:#6F2BD5;
     --rosa-medio: #FF6B6B;
     /* Variáveis da cor verde */
     --verde-azulado: #009a9f;
@@ -81,9 +95,23 @@ body {
   list-style: none;
   margin-right: 60px;
 }
-.nav-list a{
-  font: 300 18px var(--Roboto);
+.nav-list li a{
+  
+  text-decoration: none;
+}
+.nav-list li a{
+  font: 100 15px var(--DoctorGlitch);
+  background-image: linear-gradient(to bottom, var(--rosa), var(--roxo));
+  /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+  background-clip: text;
+  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+
+  /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+  -webkit-text-fill-color: transparent;
+
+  /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
   color: black;
+
   padding-block: 5px;
   position: relative;
 }
@@ -148,23 +176,24 @@ body {
   }
 }
 .flex-intro{
+  position: static;
   display: flex;
   height: 80vh;
-  margin-left: 5vw;
   align-items: center ;
-  justify-content: center;
+  justify-content: space-between;
+  transform: translate(-0%, 15%);
+  padding: 0 60px;
 }
 .inner-header.flex { /*Flexbox for containers*/
   position: relative; /* Redundante */
   display: flex;
-  top: 50px;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   gap: 40px 0;
 }
 .introducao .flex-intro .inner-header.flex h1 {
-  font: 700 48px var(--Montserrat);
+  font: 100 clamp(25px, 3vw, 40px) var(--DoctorGlitch);
   line-height: 1.75em;
 }
 .introducao .flex-intro .inner-header.flex span{
@@ -175,9 +204,9 @@ body {
     font: 400 14px var(--Lato);
   letter-spacing: 1px;
   color: white;
-  text-shadow: 0 0 3px white;
 }
-.introducao .flex-intro .logo-motion{
+.introducao .logo-motion img{
+  width: 20vw;
   z-index: 10;
 }
 .waves {
@@ -226,6 +255,7 @@ body {
 
 /* ======================= SEÇÃO RESPONSIVIDADE ======================== */
 section.responsividade{
+  width: 100vw;
   position: relative;
   display: flex;
   flex-wrap: wrap;  
@@ -234,20 +264,20 @@ section.responsividade{
   align-items: center;
 }
 section.responsividade .dispositivos{
-  width: auto;
+  width: clamp(50vw, 500px, 100vw);
   height: auto;
  display: grid; 
  grid-template-columns: 1fr 1fr;
  grid-gap: 50px;
- padding: 60px; 
+ padding: 60px;
  background-color: var(--cinza-clarinho);
 }
 section.responsividade .dispositivos .resp{
-  width: 280px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
   gap: 10px 0;
 }
 section.responsividade .dispositivos .resp img{
@@ -257,6 +287,7 @@ section.responsividade .dispositivos .resp img{
   padding: 10px 5px;
   margin-bottom: 10px;
   border-radius: 15px;
+  margin: auto;
 }
 section.responsividade .dispositivos .resp span{
   font: 600 20px var(--Montserrat);
@@ -326,19 +357,22 @@ section.animacao-letreiro .letreiro p span{
 /* ========================== SEÇÃO POTENCIAL ========================== */
 section.potencial{
   width: 100vw;
+  height: auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   align-items: center;
   gap: 40px;
-  margin-top: 50px;
-  justify-content: space-evenly;
+  justify-content: center;
+  padding: 60px;
+  
 }
 section.potencial .texto-potencial{
-  width: 45vw; display: flex;
+  font-size:clamp(1rem, 2.5vw, 2rem);;
+   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-section.potencial .texto-potencial h1{
+section.potencial .texto-potencial h1{  
   font: 500 40px var(--Roboto);
   color: var(--cinza-dark);
 }
@@ -353,17 +387,14 @@ section.potencial .texto-potencial button{
   padding: 17px 20px; 
   border:0;
   border-radius: 40px;
+  cursor: pointer;
 }
-section.potencial .texto-potencial .beneficios{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+section.potencial .texto-potencial .beneficios ul{
   list-style: none;
-}
-section.potencial .texto-potencial .beneficios li{
+  display: flex; flex-direction: column; gap: 20px;
   font: 400 16px var(--Roboto); color: var(--cinza);
 }
-section.potencial .texto-potencial .beneficios li i{
+section.potencial .texto-potencial .beneficios ul li i{
   background-color: var(--azul-claro2);
   color: white;
   padding: 4px 4px 3px;
@@ -372,11 +403,13 @@ section.potencial .texto-potencial .beneficios li i{
 }
 section.potencial .img-potencial{
   display: flex;
-  gap: 70px;
+  height: 100%;
+  gap: 60px;
+  align-items: center;
 }
 section.potencial .img-potencial img{
-  height: 550px ;
   border-radius: 10px;
+  height: 550px ;
 }
 section.potencial .img-potencial img.first{
   position: relative;
@@ -384,8 +417,35 @@ section.potencial .img-potencial img.first{
   box-shadow: 30px 30px 20px rgb(0 0 0 / 14%);
 }
 section.potencial .img-potencial img.second{
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.336);
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.336));
+  
 }
+
+@media (min-width: 1230px) {
+  /* Tamanho maior de tela */
+  section.potencial{
+    justify-content: space-between;
+  }
+  section.potencial .texto-potencial {
+    max-width: 40vw;
+  }
+}
+@media (max-width: 1160px){
+  section.potencial{
+    justify-content: center;
+  }
+  section.responsividade .dispositivos{
+    width: 100vw;
+  }
+  
+}
+@media (max-width: 767px) {
+  /* Tamanho menor de tela */
+  section.potencial .img-potencial {
+    display: none;
+  }
+}
+
 /* ======================== FIM SEÇÃO POTENCIAL ======================== */
 
 
@@ -479,15 +539,23 @@ section.potencial .img-potencial img.second{
   .content {
     height:30vh;
   }
-  h1 {
-    font-size:24px;
+  .introducao .flex-intro{
+    flex-direction: column;
+    padding: 0 20px;
+    justify-content: center;
+    gap: 30px;
+  }
+  .introducao .inner-header.flex{
+    gap: 20px 0;
+  }
+  section.potencial .texto-potencial h1{
+    font-size: 30px;
   }
   section.responsividade .dispositivos{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; padding: 30px;
   }
   section.responsividade .dispositivos {
     grid-template-columns: 1fr; /* Altera para uma coluna */
-    width: auto;
     height: auto;
   }
   section.responsividade{
@@ -500,5 +568,8 @@ section.potencial .img-potencial img.second{
   section.animacao-letreiro .letreiro p{
     font: 500 45px var(--Prompt);
     
+  }
+  section.potencial{
+    padding: 20px 20px 40px 20px;
   }
 }

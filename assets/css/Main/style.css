@@ -21,6 +21,9 @@
   font-family: 'Nos';
   src: url(../../fonts/NOS.otf);
 }
+html{
+  height: 1000vh;
+}
 
 :root{
     /* Fontes */
@@ -66,6 +69,8 @@
 body {
   margin:0;
   overflow-x: hidden;
+  background-color: white;
+  transition: .5s;
 }
 
 /* ============================== HEADER =============================== */
@@ -94,13 +99,14 @@ body {
   gap: 32px;
   list-style: none;
   margin-right: 60px;
+  align-items: center;
 }
 .nav-list li a{
   
   text-decoration: none;
 }
 .nav-list li a{
-  font: 100 15px var(--DoctorGlitch);
+  font: 600 15px var(--Montserrat);
   background-image: linear-gradient(to bottom, var(--rosa), var(--roxo));
   /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
   background-clip: text;
@@ -146,6 +152,58 @@ body {
   position: relative;
   transition: 0.3s;
 }
+header .nav .trilho{
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 36px;
+  background-color: var(--cinza-claro);
+  box-shadow: 0 0 1px rgba(36, 36, 36, 0.377);
+  transition: .5s;
+  cursor: pointer;
+  border-radius: 70px;
+  position: relative;
+}
+header .nav .trilho .dark-mode{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin-left: 3px;
+  border-radius: 50%;
+  display: flex;
+  transform: scale(.9);
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid var(--cinza-medio);
+  position: absolute;
+  left: 0;
+  transition: .5s;
+}
+header .nav .dark-mode img{
+  width: 20px;
+  height: 20px;
+}
+header .nav .dark-mode img.night{
+  display:none;
+}
+header .nav .trilho.dark{
+  background-color: var(--cinza-escuro); 
+  
+}
+header .nav .trilho.dark .dark-mode{
+  left: 63px; transition: .5s;
+}
+header .nav .trilho.dark .dark-mode img.night{
+  display: block;
+}
+header .nav .trilho.dark .dark-mode img.light{
+  display: none;
+}
+body.dark{
+  background-color: var(--prussian_blue);
+}
+
 /* ============================ FIM HEADER ============================= */
 
 /* ================== MEDIA QUERY (MAX-WIDTH: 750px) =================== */
@@ -193,7 +251,7 @@ body {
   gap: 40px 0;
 }
 .introducao .flex-intro .inner-header.flex h1 {
-  font: 100 clamp(25px, 3vw, 40px) var(--DoctorGlitch);
+  font: 500 clamp(25px, 3vw, 40px) var(--Montserrat);
   line-height: 1.75em;
 }
 .introducao .flex-intro .inner-header.flex span{
@@ -279,6 +337,7 @@ section.responsividade .dispositivos .resp{
   justify-content: center;
   text-align: center;
   gap: 10px 0;
+  align-self: center;
 }
 section.responsividade .dispositivos .resp img{
   width: 50px;
@@ -447,6 +506,35 @@ section.potencial .img-potencial img.second{
 }
 
 /* ======================== FIM SEÇÃO POTENCIAL ======================== */
+
+/* ========================= PARALLAX INOVAÇÃO ========================= */
+section.parallax-inovacao{
+  background-image: url(../../img/Inovação.png);
+  min-height: 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 30vh;
+}
+section.parallax-inovacao .texto-parallax{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100vw;
+  background-color: #031041ab;
+  color: white;
+  gap: 20px;
+}
+section.parallax-inovacao .texto-parallax h1{
+  font: 800 40px var(--Montserrat);
+}
+section.parallax-inovacao .texto-parallax p{
+  font: 400 18px var(--Montserrat);
+}
+/* ======================= FIM PARALLAX INOVAÇÃO ======================= */
 
 
 

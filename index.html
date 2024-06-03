@@ -36,16 +36,24 @@
     <title>Code Sphere Innovation</title>
 </head>
 <body>
-    <header class="cabeçalho" id="header">
-        <nav class="nav">
+    <header class="cabecalho" id="header">
+        <nav class="nav" id="nav">
             <a href="/" class="logo"><img src="assets/img/Logotipo - CSI.svg" alt="Logotipo" id="cog"></a>
             <button class="hamburger"></button>
             <ul class="nav-list">
                 <li><a href="#/">Home</a></li>
                 <li><a href="#">Quem Somos</a></li>
                 <li><a href="#">Contatos</a></li>
+                <div class="trilho"  id="trilho">
+                    <div class="dark-mode">
+                        <img src="assets/img/light.png" alt="" class="light">
+                        <img src="assets/img/night.png" alt="" class="night">
+                    </div>
+                </div>
             </ul>
+            
         </nav>
+        
     </header>
 
     <div class="introducao">
@@ -110,23 +118,24 @@
             <div class="dispositivos">
                 <div class="android resp">
                     <img src="assets/img/Icon celular.svg" alt="">
-                    <span>Android</span>
-                    <p>Componentes personalizados para combinar perfeitamente com seu design</p>
-                </div>
-                <div class="ios resp">
-                    <img src="assets/img/Icon casa.png" alt="">
-                    <span>iOS</span>
-                    <p>Componentes personalizados para combinar perfeitamente com seu design</p>
+                    <span>Dispositivos Móveis</span>
+                    <p>Seu aplicativo, sua marca, em qualquer dispositivo</p>
                 </div>
                 <div class="web resp">
                     <img src="assets/img/Icon web.png" alt="">
                     <span>Web</span>
                     <p>Componentes personalizados para combinar perfeitamente com seu design</p>
                 </div>
-                <div class="desktop resp">
-                    <img src="assets/img/Icon desktop.png" alt="">
-                    <span>Desktop</span>
-                    <p>Componentes personalizados para combinar perfeitamente com seu design</p>
+                <div class="lampada resp">
+                    <img src="assets/img/Icon lampada.png" alt="">
+                    <span>Inovação</span>
+                    <p>Destacando-se com criatividade e excelência</p>
+                </div>
+                
+                <div class="foguete resp">
+                    <img src="assets/img/Icon foguete.png" alt="">
+                    <span>Impulso</span>
+                    <p>Decole com eficiência através de serviços rápidos e confiáveis</p>
                 </div>
             </div>
             <div class="dispositivos-img"><img src="assets/img/Dispositivos.svg" alt=""></div>
@@ -138,9 +147,16 @@
         </div>
     </section>
 
+    <section class="parallax-inovacao">
+        <div class="texto-parallax">
+            <h1>Abra as portas para infinitas possibilidades!</h1>
+            <p>Na nossa jornada pela inovação, cada pixel conta uma história de sucesso.</p>
+        </div>
+    </section>
+
         
 
-    
+    <script src="assets/js/darkmode.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
     <script>
         const hamburger = document.querySelector(".hamburger");

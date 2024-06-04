@@ -166,10 +166,10 @@ header .nav .trilho{
   border-radius: 70px;
   position: relative;
 }
-header .nav .trilho .dark-mode{
-  width: 30px;
-  height: 30px;
-  padding: 5px;
+header .nav .trilho .dark-mode {
+  width: 20px;
+  height: 20px;
+  padding: 14px;
   margin-left: 3px;
   border-radius: 50%;
   display: flex;
@@ -179,12 +179,11 @@ header .nav .trilho .dark-mode{
   position: absolute;
   left: 0;
   transition: .5s;
-  box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.253),0 0 0 14px rgba(255, 255, 255, 0.16),0 0 0 21px rgba(255, 255, 255, 0.084);
+  box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.253), 0 0 0 14px rgba(255, 255, 255, 0.16), 0 0 0 21px rgba(255, 255, 255, 0.084);
 }
 header .nav .dark-mode img{
   width: 40px;
   height: 40px;
-  
 }
 header .nav .dark-mode img.night{
   display:none;
@@ -198,7 +197,7 @@ header .nav .trilho.dark .dark-mode{
   background-color: transparent;
   border: none;
   left: 63px; transition: .5s;
-  box-shadow: none ;
+  box-shadow: none;
 }
 header .nav .trilho.dark .dark-mode img.night{
   display: block;
@@ -393,14 +392,12 @@ section.animacao-letreiro{
   width: 100%;  
 }
 section.animacao-letreiro .letreiro{
-  
+  text-align: center;
   background-color: var(--rosa-medio);
   width: 100%;
   padding: 10px 0;
   margin: 0 auto;
   overflow: hidden;
-}
-section.animacao-letreiro .letreiro{
   font: 700 65px var(--Prompt);
   text-transform: uppercase;
   letter-spacing: 7px;
@@ -410,10 +407,10 @@ section.animacao-letreiro .letreiro{
   -webkit-text-stroke-color: white;
 }
 section.animacao-letreiro .letreiro.up p{
-  animation: 10s infinite slide linear forwards;
+  animation: 10s infinite slide linear alternate;
 }
 section.animacao-letreiro .letreiro.down p{
-  animation: 10s infinite letreiro linear forwards;
+  animation: 10s infinite letreiro linear alternate;
 }
 section.animacao-letreiro .letreiro p span{
   color: white;
@@ -425,12 +422,12 @@ section.animacao-letreiro .letreiro p span{
   }
 
   100% {
-      transform: translateX(-1040px);
+      transform: translateX(-1900px);
   }
 }
 @keyframes letreiro {
   0% {
-    transform: translateX(-1040PX);
+    transform: translateX(-1900PX);
   }
   100% {
     transform: translateX(0); /* Mudança para positivo para inverter a direção */
@@ -531,6 +528,43 @@ section.potencial .img-potencial img.second{
 }
 
 /* ======================== FIM SEÇÃO POTENCIAL ======================== */
+
+/* ========================== SEÇÃO SERVIÇOS =========================== */
+section.servicos{
+  position: relative; width: 100vw;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;
+}
+section.servicos .carrossel{
+  display: flex; justify-content: center; align-items: center; gap: 60px;
+  animation: carrosselAnimacao 30000ms infinite; 
+}
+section.servicos .carrossel-automatico .img-carrossel{
+  width: 350px; border-radius: 15px; box-shadow: 1px 4px 20px -2px rgb(0 0 0 / 10%);
+  height: 400px; overflow: hidden; position: relative;
+}
+section.servicos .carrossel-automatico.second{
+  margin-top: 60px;
+}
+section.servicos .carrossel-automatico img{
+  position: absolute;
+  width: 100%; 
+  height: 100%; object-fit: cover;
+}
+section.servicos .carrossel-automatico.first img{
+  object-position: top;
+}
+section.servicos .carrossel-automatico.second img{
+  object-position: bottom;
+}
+@keyframes carrosselAnimacao {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+/* ======================== FIM SEÇÃO SERVIÇOS ========================= */
 
 /* ========================= PARALLAX INOVAÇÃO ========================= */
 section.parallax-inovacao{

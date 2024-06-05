@@ -101,8 +101,8 @@
             </div>
         </div>
         <div class="img-potencial">
-            <img src="assets/img/Unidesc.png" alt="" class="first">
-            <img src="assets/img/Lima Refrigeração.png" alt="" class="second">
+            <img src="assets/img/Unidesc.png" alt="" class="first click">
+            <img src="assets/img/Lima Refrigeração.png" alt="" class="second click">
         </div>
     </section>
 
@@ -145,36 +145,7 @@
         </div>
     </section>
 
-    <section class="servicos">
-        <div class="texto-servico">
-            <h1></h1>
-            <h3></h3>
-        </div>
-        <div class="carrossel">
-            <div class="carrossel-automatico first">
-                <div class="img-carrossel"><img src="assets/img/Lima Refrigeração - Página Inicial.png" alt=""></div>
-            </div>
-            <div class="carrossel-automatico second">
-                <div class="img-carrossel"><img src="assets/img/Lima Refrigeração - Página Inicial.png" alt=""></div>
-            </div>
-            <div class="carrossel-automatico first">
-                <div class="img-carrossel"><img src="assets/img/Lima Refrigeração - Quem Somos.png" alt=""></div>
-            </div>
-            <div class="carrossel-automatico second">
-                <div class="img-carrossel"><img src="assets/img/Lima Refrigeração - Quem Somos.png" alt=""></div>
-            </div>
-            <div class="carrossel-automatico first">
-                <div class="img-carrossel"><img src="assets/img/Lima Refrigeração - Contatos.png" alt=""></div>
-            </div>
-            <div class="carrossel-automatico first">
-                <div class="img-carrossel"><img src="assets/img/Unidesc - Pàgina Inicial.png" alt=""></div>
-            </div>
-            <div class="carrossel-automatico second">
-                <div class="img-carrossel"><img src="assets/img/Unidesc - Pàgina Inicial.png" alt=""></div>
-            </div>
 
-        </div>
-    </section>
 
     <section class="parallax-inovacao">
         <div class="texto-parallax">
@@ -183,15 +154,45 @@
         </div>
     </section>
 
-        
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
 
     <script src="assets/js/darkmode.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
     <script>
+        /* Efeito Menu de Hamburgue */
         const hamburger = document.querySelector(".hamburger");
-const nav = document.querySelector(".nav");
+        const nav = document.querySelector(".nav");
 
-hamburger.addEventListener("click", () => nav.classList.toggle("active"));
+        hamburger.addEventListener("click", () => nav.classList.toggle("active"));
+
+        /* Efeito Cursor */
+        var isClicking = false;
+        var cursor = document.querySelector(".cursor");
+        var cursor2 = document.querySelector(".cursor2");
+        document.addEventListener("mousemove", function(e){
+            cursor.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+        });
+        
+        document.addEventListener("mousedown", function() {
+            isClicking = true;
+            cursor2.style.transform = "translate(-50%, -50%) scale(3)";
+            cursor2.style.transition = ".3s";
+        });
+
+        document.addEventListener("mouseup", function() {
+            isClicking = false;
+            cursor2.style.transform = "translate(-50%, -50%)";
+        });
+
+        document.addEventListener("mousemove", function(e) {
+            if (isClicking) {
+                cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px; transform: translate(-50%, -50%) scale(3); transition: .5s;";
+            } else {
+                cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+            }
+        });
+
     </script>
 </body>
 </html>

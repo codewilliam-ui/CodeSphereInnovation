@@ -530,40 +530,7 @@ section.potencial .img-potencial img.second{
 /* ======================== FIM SEÇÃO POTENCIAL ======================== */
 
 /* ========================== SEÇÃO SERVIÇOS =========================== */
-section.servicos{
-  position: relative; width: 100vw;
-  display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden;
-}
-section.servicos .carrossel{
-  display: flex; justify-content: center; align-items: center; gap: 60px;
-  animation: carrosselAnimacao 30000ms infinite; 
-}
-section.servicos .carrossel-automatico .img-carrossel{
-  width: 350px; border-radius: 15px; box-shadow: 1px 4px 20px -2px rgb(0 0 0 / 10%);
-  height: 400px; overflow: hidden; position: relative;
-}
-section.servicos .carrossel-automatico.second{
-  margin-top: 60px;
-}
-section.servicos .carrossel-automatico img{
-  position: absolute;
-  width: 100%; 
-  height: 100%; object-fit: cover;
-}
-section.servicos .carrossel-automatico.first img{
-  object-position: top;
-}
-section.servicos .carrossel-automatico.second img{
-  object-position: bottom;
-}
-@keyframes carrosselAnimacao {
-  0% {
-      transform: translateX(0);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
-}
+
 /* ======================== FIM SEÇÃO SERVIÇOS ========================= */
 
 /* ========================= PARALLAX INOVAÇÃO ========================= */
@@ -718,4 +685,29 @@ section.parallax-inovacao .texto-parallax p{
   section.potencial{
     padding: 20px 20px 40px 20px;
   }
+}
+
+.cursor{
+  position:fixed;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--roxo);
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .15s;
+}
+.cursor2{
+  position:fixed;
+  width: 8px;
+  height: 8px;
+  background-color: var(--roxo);
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: 0;
 }

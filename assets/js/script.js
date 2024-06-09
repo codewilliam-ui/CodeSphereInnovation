@@ -33,3 +33,4 @@ document.addEventListener("mousemove", function(e) {
         cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
     }
 });
+

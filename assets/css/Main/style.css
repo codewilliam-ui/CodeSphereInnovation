@@ -3,24 +3,19 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 @import url(https://fonts.googleapis.com/css?family=Prompt:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  overflow-x: hidden;
-}
 :root {
   /* Fontes */
-  --DoctorGlitch: 'DoctorGlitch', sans-serif;
-  --Nos: 'Nos', sans-serif;
-  --CodeVein: 'CodeVein', sans-serif;
-  --Zero-Master: 'Zero-Master';
   --Lato: 'Lato', sans-serif;
   --Roboto: 'Roboto', sans-serif;
   --Montserrat: 'Montserrat', sans-serif;
   --Prompt: 'Prompt', sans-serif;
+  --Manrope: 'Manrope', sans-serif;
   /* Variáveis da cor azul */
   --azure: #EFF1F9;
   --carolina_blue: #1C9CD7;
@@ -66,6 +61,7 @@ body {
   position: fixed;
   background-color: white;
   width: 100%;
+  top: 0;
   z-index: 4;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.081);
 }
@@ -209,23 +205,20 @@ body.dark .hamburger::before {
 body.dark .nav-list {
   background-color: var(--space);
 }
-/* body.dark .introducao{
-  background: none;
-} */
 /* ============================ FIM HEADER ============================= */
-/* ================== MEDIA QUERY (MAX-WIDTH: 750px) =================== */
-/* ================ FIM MEDIA QUERY (MAX-WIDTH: 750px) ================= */
-.introducao {
+/* ======================== SEÇÃO INTRODUÇÃO =========================== */
+section.introducao {
   width: 100%;
   height: 70vh;
   display: flex;
   position: relative;
   text-align: center;
-  background: linear-gradient(45deg, #B517EC, #6F2BD5, #B517EC, #6F2BD5);
+  background: linear-gradient(45deg, #45025b, #6F2BD5);
   background-size: 300% 300%;
   animation: color 12s ease-in-out infinite;
   color: white;
   z-index: -10;
+  margin-top: 70px;
 }
 @keyframes color {
   0% {
@@ -237,9 +230,6 @@ body.dark .nav-list {
   100% {
     background-position: 0% 60%;
   }
-}
-body.dark .layer5 {
-  transform: translateY(-100vh) translateX(-60vw);
 }
 .parallax-rocket {
   height: 100%;
@@ -255,12 +245,15 @@ body.dark .layer5 {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.layer0{
+  background-image: url(../../img/onda\ sonora.png);
+  z-index: -5; opacity: 0.2;
+}
 .layer1 {
   background-image: url('../../img/Camada\ 1\ \(fundo\).svg');
   z-index: -4;
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.236));
 }
-body.layer1 {}
 .layer2 {
   background-image: url(../../img/Camada\ 2\ \(estrelas\).png);
   z-index: -3;
@@ -290,6 +283,9 @@ body.layer1 {}
   z-index: 0;
   transition: 3s;
 }
+body.dark .layer5 {
+  transform: translateY(-100vh) translateX(-60vw);
+}
 .layer6 {
   background-image: url(../../img/Camada\ 6\ \(astronauta\).svg);
   z-index: 1;
@@ -313,20 +309,6 @@ body.dark .layer6 {
     transform: rotate(360deg);
   }
 }
-.layer7 {
-  background-image: url(../../img/Camada\ 7\ \(ovini\).svg);
-  transform: rotate(-20deg) translate(-54vh, 2vw);
-  z-index: -3;
-  width: 65px;
-  height: 32px;
-  transition: 5s;
-  top: 50%;
-  left: 93%;
-}
-body.dark .layer7 {
-  top: 20%;
-  left: 150%;
-}
 .flex-intro {
   display: flex;
   flex-direction: column;
@@ -334,7 +316,6 @@ body.dark .layer7 {
   justify-content: center;
   padding: 0 60px;
   width: 50vw;
-  gap: 40px;
 }
 .inner-header.flex {
   /*Flexbox for containers*/
@@ -344,24 +325,32 @@ body.dark .layer7 {
   justify-content: center;
   flex-direction: column;
   text-align: left;
-  gap: 40px 0;
+  gap: 20px 0;
 }
-.introducao .flex-intro .inner-header.flex h1 {
-  font: 500 clamp(25px, 3vw, 40px) var(--Montserrat);
-  line-height: 1.75em;
+.introducao .flex-intro .inner-header.flex .flex-titulo h3 {
+  font: 800 18px var(--Manrope);
+  line-height: 1.2em;
+  letter-spacing: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
-.introducao .flex-intro .inner-header.flex span {
-  color: var(--azure);
-  font: 600 20px var(--Montserrat);
+.introducao .flex-intro .inner-header.flex .flex-titulo h1 {
+  font: 300 50px var(--Manrope);
+  line-height: 1em;
+}
+.introducao .flex-intro .inner-header.flex .flex-titulo h1 span {
+  font: 600 55px var(--Manrope);
 }
 .introducao .flex-intro .inner-header.flex p {
-  font: 400 14px var(--Lato);
-  letter-spacing: 1px;
-  color: white;
+  font: 400 18px var(--Lato);
+  line-height: 32px; color: var(--cinza-clarinho);
 }
-.introducao .logo-motion img {
-  width: 10vw;
-  z-index: 10;
+.introducao .flex-intro .inner-header.flex .flex-button button{
+  background-color: var(--rosa-medio);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font: 400 16px var(--Lato);
 }
 /* ======================= SEÇÃO RESPONSIVIDADE ======================== */
 section.responsividade {
@@ -372,6 +361,7 @@ section.responsividade {
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
+  background-color: var(--cinza-clarinho);
 }
 section.responsividade .dispositivos {
   width: clamp(50vw, 500px, 100vw);
@@ -380,7 +370,7 @@ section.responsividade .dispositivos {
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
   padding: 60px;
-  background-color: var(--cinza-clarinho);
+  max-width: 1020px;
 }
 section.responsividade .dispositivos .resp {
   width: 100%;
@@ -407,7 +397,7 @@ section.responsividade .dispositivos .resp p {
   font: 400 14px var(--Montserrat);
 }
 section.responsividade .dispositivos-img img {
-  width: 50vw;
+  width: 586px;
   height: auto;
   margin: auto;
 }
@@ -423,7 +413,7 @@ section.animacao-letreiro .letreiro {
   padding: 10px 0;
   margin: 0 auto;
   overflow: hidden;
-  font: 700 65px var(--Prompt);
+  font: 700 55px var(--Prompt);
   text-transform: uppercase;
   letter-spacing: 7px;
   color: transparent;
@@ -469,6 +459,8 @@ section.potencial {
   gap: 40px;
   justify-content: center;
   padding: 60px;
+  max-width: 1500px;
+  margin: auto;
 }
 section.potencial .texto-potencial {
   font-size: clamp(1rem, 2.5vw, 2rem);
@@ -553,12 +545,76 @@ section.potencial .img-potencial img.second {
   }
 }
 /* ======================== FIM SEÇÃO POTENCIAL ======================== */
-/* ========================== SEÇÃO SERVIÇOS =========================== */
-/* ======================== FIM SEÇÃO SERVIÇOS ========================= */
+/* ========================== SEÇÃO RECURSOS =========================== */
+section.ferramentas {
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 70px auto;
+  max-width: 1200px;
+}
+section.ferramentas .texto-ferramentas, .texto-blog {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 70px;
+}
+section.ferramentas .texto-ferramentas h4, h4 {
+  font: 900 22px var(--Roboto);
+  text-transform: uppercase;
+  background-image: linear-gradient(45deg, #FF6B6B, #B517EC, #6F2BD5, #FF6B6B, #FF6B6B);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 280% 150%;
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+section.ferramentas .texto-ferramentas h2, .texto-blog h2 {
+  font: 800 42px var(--Manrope);
+  width: 45vw;
+  color: var(--space);
+  line-height: 1.2;
+}
+section.ferramentas .recursos {
+  max-width: 1200px;
+  display: grid;
+  align-self: center;
+  grid-template-columns: repeat(4, minmax(270px, 1fr));
+  gap: 30px;
+}
+section.ferramentas .recursos a {
+  text-decoration: none;
+}
+section.ferramentas .recursos a .recursos-img {
+  width: 270px;
+  height: 150px;
+  box-shadow: 0 25px 70px rgb(0 0 0 / 7%);
+  display: flex;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 15px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+section.ferramentas .recursos .recursos-img img {
+  width: auto;
+  height: 50px;
+}
+section.ferramentas .recursos .recursos-img span {
+  font: 600 16px var(--Roboto);
+  color: var(--space);
+}
+/* ======================== FIM SEÇÃO RECURSOS ========================= */
 /* ========================= PARALLAX INOVAÇÃO ========================= */
 section.parallax-inovacao {
-  background-image: url(../../img/Inovação.png);
-  min-height: 300px;
+  background-image: url(../../img/asbtract.jpg);
+  min-height: 200px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -569,9 +625,9 @@ section.parallax-inovacao .texto-parallax {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 250px;
   width: 100vw;
-  background-color: #031041ab;
+  background-color: 0 .5rem 1rem rgba(0, 0, 0, .15);
   color: white;
   gap: 20px;
 }
@@ -582,6 +638,61 @@ section.parallax-inovacao .texto-parallax p {
   font: 400 18px var(--Montserrat);
 }
 /* ======================= FIM PARALLAX INOVAÇÃO ======================= */
+/* =========================== SEÇÃO BLOGS ============================ */
+section.blogs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 70px 0  ;
+}
+section.blogs .texto-blog{
+  text-align: center;
+}
+section.blogs  .recentes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+section.blogs .recentes .noticia{
+  width: 600px!important;
+  background-color: var(--cinza-clarinho);
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.152);
+  gap: 20px;
+}
+section.blogs  .recentes .noticia .texto-noticia{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 55px
+}
+section.blogs  .recentes .noticia .texto-noticia .tag{
+  width: 40px;
+}
+section.blogs  .recentes .noticia .texto-noticia .tag span{
+  background-color: var(--rosa-medio); color: white;
+  padding: 8px 20px; border-radius: 5px; font: 500 14px var(--Prompt);
+}
+section.blogs  .recentes .noticia .texto-noticia .main h3{
+  font: 700 18px var(--Roboto); margin-bottom: 25px;
+}
+section.blogs  .recentes .noticia .texto-noticia .main p{
+  font: 400 15px var(--Lato); line-height: 1.5em;
+}
+section.blogs  .recentes .noticia .texto-noticia .data p{
+  font: 500 14px var(--Roboto); color: black;
+}
+section.blogs  .recentes .noticia .texto-noticia .data span{
+  color: var(--cinza);
+}
+/* ========================= FIM SEÇÃO BLOGS ========================== */
 @media (max-width: 768px) {
   .nav {
     padding: 0 20px;

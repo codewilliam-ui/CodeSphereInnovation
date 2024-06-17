@@ -50,6 +50,8 @@ body {
   overflow-x: hidden;
   background-color: white;
   transition: .5s;
+  z-index: -10;
+  position: relative;
 }
 /* ============================== HEADER =============================== */
 .nav {
@@ -68,7 +70,7 @@ body {
 .logo img {
   transition: .7s ease;
   margin-left: 60px;
-  filter: drop-shadow(2px 3px 1px rgba(0, 0, 0, 0.23));
+  filter: drop-shadow(2px 3px 1px rgba(0, 0, 0, 0.23)); /* ===================================================================== */
 }
 .logo img:hover {
   transform: scale(1.03);
@@ -345,6 +347,11 @@ body.dark .layer6 {
   padding: 0.667vw 1.333vw; /* 10px 20px */
   border: none;
   font: 400 1.067vw var(--Lato);
+  transition: .3s;
+  cursor: pointer;
+}
+.introducao .flex-intro .inner-header.flex .flex-button button:hover{
+  transform: scale(1.02);
 }
 /* ========================== SEÇÃO POTENCIAL ========================== */
 section.potencial {
@@ -593,7 +600,6 @@ section.ferramentas .recursos a .recursos-img {
   height: 19.33vh; /* 150px */
   box-shadow: 0 1.628vw 4.557vw rgb(0 0 0 / 7%); /* 25px 70px */
   display: flex;
-  cursor: pointer;
   background-color: white;
   border-radius: 0.977vw; /* 15px */
   flex-direction: column;
@@ -696,6 +702,20 @@ section.blogs  .recentes .noticia .noticia-img img{
 
 }
 /* ========================= FIM SEÇÃO BLOGS ========================== */
+/* ========================= SEÇÃO CARREGANDO ========================= */
+.loading{
+  background-color: rgba(0, 0, 0, 0.084);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* ======================= FIM SEÇÃO CARREGANDO ======================= */
 @media (max-width: 768px) {
   .nav {
     padding: 0 20px;

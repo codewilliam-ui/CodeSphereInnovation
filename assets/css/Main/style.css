@@ -725,6 +725,38 @@ aside section.blogs  .recentes .noticia.second .noticia-img img{
   margin:1.953vw /* 30px */ 0 1.302vw /* 20px */ 0; width: 19.271vw /* 297px */; height: 17.397vh /* 135px */;
 }
 /* ========================= FIM SEÇÃO BLOGS ========================== */
+
+
+/* ============================== FOOTER ============================== */
+footer{
+  background-color: var(--rosa);
+  padding: 1vw 4vw;
+}
+section.footer{
+  display: flex;
+  gap: 60px;
+}
+section.footer .footer-flex{
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+}
+section.footer .footer-flex.first img{
+  width: 70px; color: white;
+}
+section.footer .footer-flex ul{
+  list-style: none;
+}
+section.footer .footer-flex.first ul{
+  display: flex;
+  gap: 20px;
+}
+/* ============================  FIM FOOTER ============================ */
+
+
 /* ========================= SEÇÃO CARREGANDO ========================= */
 .loading{
   background-color: rgba(0, 0, 0, 0.084);
